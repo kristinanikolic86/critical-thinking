@@ -1,0 +1,41 @@
+<html>
+  <head>
+    Svi Tekstovi
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <div class = "list">
+        <ul>
+          <li [routerLink]= "['/admin/neobjavljeni_tekstovi']" >Neobjavljeni tekstovi</li>
+          <li [routerLink]= "['/admin/dodaj_tekst']"><i class="fa fa-plus"></i>&nbsp;&nbsp;Dodaj novi tekst</li>
+          <li (click) = "logout()">Logout</li>
+        </ul>
+        </div>
+        <h1>Objavljeni tekstovi</h1>
+      <table id = "table" class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Naslov</th>
+            <th>Opis</th>
+            <th>Kategorija</th>
+            <th>Datum</th>
+            <th>Akcija</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articles">
+            <td>{{article.id}}</td>
+            <td>{{article.title}}</td>
+            <td>{{article.description}}</td>
+            <td>{{article.category.name}}</td>
+            <td>{{article.publicationDate | date}}</td>
+            <td ><div (click) = "deleteArticle(article.id)" id = "action"><i class="fa fa-trash-o" style="font-size:24px"></i>&nbsp;<h5>Obriši</h5></div>
+              <div *ngIf = "article.published == true" [routerLink]= "['/tekst', article.id]" id = "action"><i class = "fa fa-book" style="font-size:24px"></i>&nbsp;<h5>Pročitaj</h5></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+</html>

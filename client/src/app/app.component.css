@@ -1,0 +1,407 @@
+@media screen and (max-width: 8000px) {
+html, body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#logo-smaller{
+  display: none;
+}
+
+#nav-smaller {
+  display:none;
+}
+
+header {
+  width:100%;
+}
+
+header nav {
+  height: 66px;
+  background-color: #f78429;
+  display: flex;
+  align-items: center;
+}
+
+header #nav-first #search-container {
+  margin-left: 5px;
+}
+
+header #nav-first input[type=text] {
+  font-size: 1.25em;
+  border: none;
+}
+
+header #nav-first button {
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px 2px;
+}
+
+header #nav-first #search-container button:hover {
+  background: #ccc;
+}
+
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+header #nav-first ul {
+  margin-left: auto;
+}
+
+header ul li {
+  display:inline-block;
+  margin-right: 30px;
+  font-size: 1.25em;
+  padding: 0;
+}
+
+ header ul li a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header #nav-first ul li{
+  margin-right: 50px;
+}
+
+.underlined{
+  border-bottom: 4px solid transparent;
+}
+
+.underlined:hover {
+  border-bottom: white 4px solid;
+}
+
+.underlined:active {
+  border-bottom: white 4px solid;
+}
+
+.bla{
+  border-bottom: white 4px solid;
+}
+
+header .logo {
+  display: flex;
+  justify-content: center;
+  padding-left: 3%;
+
+}
+
+header .logo img {
+  width: 700px;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+header .nav-second {
+  padding-left: 30px;
+  justify-content: center;
+  border-bottom: 1px solid white;
+}
+
+.nav-second  a {
+  white-space: nowrap;
+}
+
+footer {
+  background: #f78429;
+  color: white;
+  align-self: flex-end;
+  width:100%;
+}
+
+footer .footer-content {
+  display:flex;
+}
+
+footer .footer-content .footer-section {
+  flex: 1;
+}
+
+footer .footer-content .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+
+footer .footer-content .contact span {
+  font-size: 1.25em;
+  margin-top:15px;
+}
+
+footer .footer-content .text {
+  font-size: 1.5em;
+}
+
+footer .footer-content .links {
+  font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:0;
+}
+
+footer .footer-content .links ul {
+  padding-top:15px;
+  line-height: 2em;
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+
+footer .footer-content .links a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+footer .footer-content .links a:hover {
+  text-decoration: underline;
+}
+
+ footer .footer-content .facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:10px 0;
+  cursor: pointer;
+}
+
+footer .footer-content .facebook iframe {
+  width: 350px;
+  height: 150px;
+}
+
+footer .footer-bottom {
+  background: #c86d22;
+  color: white;
+  text-align: center;
+  padding:20px;
+  bottom: 0px;
+  left:0px;
+  height: 45px;
+  width:100%;
+}
+}
+
+@media screen and (max-width: 1599px) {
+
+  header ul li {
+    font-size: 1.125em;
+  }
+}
+
+@media screen and (max-width: 1439px) and (min-width:1366px) {
+
+  header .logo img {
+    width: 600px;
+    height: 200px;
+  }
+
+  header ul li {
+    font-size: 1.063em;
+  }
+}
+
+@media screen and (max-width: 1365px) {
+
+  #nav-smaller {
+    height: 66px;
+    background-color: #f78429;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+
+  }
+
+  #nav-smaller ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #nav-smaller ul li {
+    display:inline-block;
+    margin-right: 80px;
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+
+  #nav-smaller ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .logo{
+    border-bottom: 4px solid #f78429 ;
+  }
+
+  header .logo img {
+    width: 600px;
+    height: 200px;
+  }
+
+  #menu{
+    background-color:#f78429;
+    position: fixed;
+    top:0;
+    right:0;
+    width:300px;
+    height: 100%;
+    z-index: 2;
+    overflow-y: scroll;
+  }
+
+  #menu .search-container{
+    display: inline-block;
+  }
+
+  #menu .search-container input{
+    font-size: 1em;
+    width: 70%;
+  }
+
+  #menu .search-container #search{
+    background-color: white;
+    color: #f78429;
+    border: none;
+    cursor: pointer;
+    padding: 2px 3px;
+  }
+
+  #menu #search:hover {
+    background: #ccc;
+  }
+
+
+  #menu #close{
+    position: fixed;
+    top:0;
+    right: 0;
+    background-color: white;
+    color: #f78429;
+    margin-left: auto;
+  }
+
+  #menu #close:hover{
+    background: #ccc;
+  }
+
+  #menu ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+    border-left:#f78429 1px solid;
+  }
+
+  #menu ul li {
+    width:100%;
+    display: inline-block;
+    font-size: 1.3em;
+    padding:3% 0;
+    text-decoration: none;
+    border-bottom:rgb(167, 165, 165) 1px solid;
+  }
+
+  #menu ul li a {
+    width:100%;
+    white-space: nowrap;
+    color:white;
+    padding-left: 10px;
+  }
+
+  #menu ul li a:hover {
+    transition: 0.5s;
+    text-decoration: underline;
+    color: white;
+  }
+
+  header .nav-second,
+  header #nav-first
+   {
+    display:none;
+  }
+
+}
+
+@media screen and (max-width: 1199px) {
+
+  footer .footer-content {
+    display:flex;
+    flex-direction: column;
+  }
+
+  footer .footer-content .footer-section {
+    padding: 15px 0;
+    border-bottom: 1px solid #fda257;
+  }
+}
+
+
+@media screen and (max-width: 599px) {
+
+  #nav-smaller {
+    padding-left: 20px;
+  }
+
+  #nav-smaller ul li {
+    font-size: 1.063em;
+    margin-right: 50px;
+  }
+
+  header .logo{
+    display: none;
+  }
+
+  #logo-smaller{
+    display: flex;
+    justify-content: center;
+    padding-left: 3%;;
+    border-bottom: 4px solid #f78429 ;
+    cursor: pointer;
+  }
+
+
+}
+
+@media screen and (max-width: 499px) {
+
+  footer .footer-content .contact span {
+    font-size: 1em;
+  }
+
+  footer .footer-content .text {
+    font-size: 1.25em;
+  }
+
+  footer .footer-content .links{
+    font-size: 1em;
+  }
+
+  footer .footer-content .facebook iframe {
+    width: 300px;
+    height: 150px;
+  }
+
+  #menu {
+    width: 250px;
+  }
+
+}
+
+
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Critical Thinking</title>
+	<meta name="description" content="Critical Thinking">
+	<meta name="author" content="Kristina Nikolic">
+
+	<!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
+
+  <!--page width smaller than 1366px-->
+<nav id = "nav-smaller">
+  <ul>
+    <li><a [routerLink]= "['o_autoru']"><div class = "underlined">O autoru</div></a></li>
+    <li><a (click)= "toggle()" style="cursor: pointer;"><div class = "underlined">Kategorije</div></a></li>
+  </ul>
+</nav>
+
+<nav id = "menu">
+  <button id = "close" (click)= "toggle()">Zatvori</button>
+    <ul *ngFor = "let c of categories">
+      <li><a [routerLink]= "['/tekstovi/kategorija/'+c.id+'/stranica/'+1]" (mouseup)="toggle()">{{c.name}}</a></li>
+    </ul>
+     <ul>
+      <li> <a> <div class="search-container">
+        <form>
+          <input type="text" placeholder="Pretraga.." name="search" [(ngModel)]= "keyWord">
+            <button type="submit" (click) = "search()" id = "search" (mouseup)="toggle()"><i class="fa fa-search" ></i></button>
+        </form>
+      </div></a></li></ul>
+</nav>
+<!--page width smaller than 1366px-->
+
+
+<!-- header -->
+  <header>
+    <nav id = "nav-first">
+      <div id="search-container">
+        <form>
+          <input type="text" placeholder="Pretraga.." name="search" [(ngModel)]= "keyWord">
+          <button type="submit" (click) = "search()"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <ul>
+        <li><a href = "https://www.facebook.com/kole1982/" title="Facebook"><div class = "underlined"><i class="fa fa-facebook"></i></div></a></li>
+        <li><a [routerLink]= "['kurs']"><div class = "underlined">Kurs</div></a></li>
+        <li><a [routerLink]= "['o_autoru']"><div class = "underlined">O autoru</div></a></li>
+      </ul>
+    </nav>
+    <div class = "logo">
+      <img src="assets/images/logo-gif.gif" (click) = "navigateToMain()">
+    </div>
+    <nav class = "nav-second">
+      <ul *ngFor = "let c of firstNavCategories">
+        <li><a [routerLink]= "['/tekstovi/kategorija/'+c.id]"><div class = "underlined">{{c.name}}</div></a></li>
+      </ul>
+    </nav>
+    <nav class = "nav-second" id = "second">
+      <ul *ngFor = "let c of secondNavCategories">
+        <li><a [routerLink]= "['/tekstovi/kategorija/'+c.id]"><div class = "underlined">{{c.name}}</div></a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- /header -->
+
+
+<!--page width smaller than 599px-->
+<div id = "logo-smaller">
+  <img src="assets/images/logo-smaller.gif" (click) = "navigateToMain()">
+</div>
+<!--page width smaller than 599px-->
+
+<router-outlet (activate)="onActivate($event)" ></router-outlet>
+
+<!--footer-->
+  <footer>
+    <div class = "footer-content">
+      <div class="footer-section contact">
+        <div class ="text">Kontakt</div>
+         <span><i class = "fa fa-envelope"> </i> &nbsp; E-mail: kole1982@yahoo.com </span>
+      </div>
+      <div class="footer-section links">
+        <ul>
+          <li><a [routerLink]= "['početna']">Početna</a></li>
+          <li><a [routerLink]= "['kurs']">Kurs</a></li>
+          <li><a [routerLink]= "['o_autoru']">O autoru</a></li>
+        </ul>
+      </div>
+      <div class="footer-section facebook">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkole1982%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" data-adapt-container-width="true"></iframe>
+      </div>
+    </div>
+
+    <div class = "footer-bottom">
+      &copy; Designed by Kristina Nikolic
+    </div>
+  </footer>
+<!--footer-->
+</body>
+</html>
+

@@ -1,0 +1,164 @@
+@media screen and (max-width: 8000px) {
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:50px;
+  }
+
+  .container {
+    opacity: 0;
+    animation: fadeIn 0.9s;
+    animation-fill-mode: forwards;
+  }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0.0;
+      }
+      100% {
+        opacity: 1.0;
+      }
+    }
+
+
+  .container .title {
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    color: #555555;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .container .category {
+    margin-bottom: 50px;
+    color:#f78429;
+    font-size:1.25em;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .container #text {
+   font-size: 1.25em;
+   line-height: 1.9;
+   color: black;
+   text-align: justify;
+   margin-top: 40px;
+  }
+
+  :host ::ng-deep #text a {
+    color: #f78429;
+  }
+
+  .container .category:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .container #image{
+    width:50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+  }
+
+  .container iframe {
+    width: 500px;
+    height: 300px;
+    
+  }
+  .social {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top:70px;
+    margin-bottom: 50px;
+  }
+
+  .social a {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding:4px 8px;
+    font-size:2em;
+    text-align: center;
+    color: #333;
+    margin-right: 15px;
+  }
+
+  .social a:hover {
+    color:#f78429;
+  }
+  }
+
+  @media screen and (max-width: 1199px) {
+
+    .container .title{
+      font-size: 2em;
+    }
+
+    .container #text {
+      font-size: 1.2em;
+    }
+
+    .social a {
+      font-size: 1.7em;
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+
+    .container #image{
+      width:70%;
+      padding-top: 50.62%;
+      position: relative;
+    }
+
+    .container img {
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      object-fit: cover;
+    }
+  }
+
+
+  @media screen and (max-width: 599px) {
+
+    .container .title {
+        font-size: 1.5em;
+      }
+
+      .container .category {
+        font-size: 1em;
+      }
+
+      .container #text{
+        font-size: 1.1em;
+      }
+
+      .container #image{
+        width:90%;
+        padding-top: 50.62%;
+        position: relative;
+      }
+      .social a {
+        font-size: 1.3em;
+      }
+  }
+

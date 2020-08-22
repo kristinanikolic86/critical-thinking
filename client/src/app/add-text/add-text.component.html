@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class= "container">
+      <h1>Dodaj novi tekst</h1>
+        <form id ="form" (ngSubmit) = "createArticle()">
+
+          <label for ="title">Naslov</label><br>
+          <input name="title" maxlength="100"[(ngModel)] = "newArticle.title"/> <br> <br>
+            <div class = "alert" *ngIf="!newArticle.title">
+              *Naslov je obavezan.
+            </div>
+
+            <label for="category">Odaberi kategoriju</label><br>
+            <select name="category" id="category" [(ngModel)]="newArticle.category">
+              <option>{{choose}}</option>
+              <option *ngFor="let c of categories" [ngValue]="c">{{c.name}}</option>
+            </select><br /><br />
+              <div class = "alert" *ngIf="!newArticle.category.name">
+              *Kategorija je obavezna.
+              </div>
+
+              <label for="video">Da li članak ima video zapis?</label><br>
+              <select name="category" id="category" [(ngModel)]="newArticle.withVideo">
+                <option [ngValue]="true">Da</option>
+                <option [ngValue]="false">Ne</option>
+              </select><br /><br />
+
+                <label for ="mainImg">Url slike ili videa</label><br>
+                <input name ="mainImg" [(ngModel)] = "newArticle.mainImage"/><br> <br>
+                  <div class = "alert" *ngIf="!newArticle.mainImage">
+                  *Url slike ili videa je obavezan.
+                  </div>
+
+            <label for ="text">Sadržaj</label><br>
+            <textarea name="text" id = "big" rows="20" cols="50"[(ngModel)] = "newArticle.text"></textarea><br /><br />
+
+            <label for ="text">Opis</label><br>
+            <textarea name="description" id ="description" maxlength="200" [(ngModel)] = "newArticle.description"></textarea><br /><br />
+
+            <div id = "save">
+              <button id = "save" *ngIf= "newArticle.title && newArticle.mainImage  && newArticle.category.name" type = "submit" id = "submit"><i class="fa fa-save"></i>&nbsp;&nbsp;Sačuvaj</button>
+            </div>
+        </form>
+        <div class = "list">
+          <ul>
+            <li (click)="goToUnpublished()" >Neobjavljeni tekstovi</li>
+            <li (click)="goToPublished()">Objavljeni tekstovi</li>
+          </ul>
+        </div>
+    </div>
+  </body>
+</html>

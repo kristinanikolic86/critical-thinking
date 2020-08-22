@@ -1,0 +1,63 @@
+@media screen and (max-width: 8000px) {
+
+  html, body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 0.9s;
+  animation-fill-mode: forwards;
+
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+.container p {
+  font-size: 1.25em;
+  line-height: 1.9;
+  color: black;
+  
+}
+}
+
+
+@media screen and (max-width: 1199px) {
+
+  .container{
+    margin-top: 50px;
+  }
+
+  .container p {
+    font-size: 1.2em;
+  }
+
+}
+
+
+@media screen and (max-width: 599px) {
+
+  .container p{
+      font-size: 1.1em;
+    }
+
+}
+
+

@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class = "container">
+      <form class="form-signin" (ngSubmit)="login()">
+        <h2 class="form-signin-heading">Login</h2>
+        <label for="username" class="sr-only">Korisničko ime</label>
+        <input type="text" id="username" class="form-control" name="username" [(ngModel)]="user.username" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Šifra</label>
+        <input type="password" id="inputPassword" class="form-control" name="username" [(ngModel)]="user.password" placeholder="Password" required>
+        <button type="submit">Sign in</button>
+      </form>
+      <div *ngIf=wrongUsernameOrPass class="alert alert-warning box-msg" role="alert">
+        Pogrešno korisničko ime ili šifra.
+      </div>
+    </div>
+  </body>
+</html>

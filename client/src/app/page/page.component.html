@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Critical Thinking</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div id = "container">
+    <div class = "card-wrapper">
+        <div class = "card"  *ngFor = "let article of articles">
+          <div id ="center"><div  id = "image"><img *ngIf = "!article.withVideo" src="{{article.mainImage}}" alt = "card-background" class="card-img">
+            <iframe *ngIf = "article.withVideo" [src]="article.mainImage | safe" alt = "card-background" class="card-img"></iframe></div></div>
+          <h1 [routerLink]= "['/tekst', article.id]">{{article.title}}</h1>
+          <div class = "category" [routerLink]= "['/tekstovi/kategorija/'+article.category.id+'/stranica/'+1]">{{article.category.name}}</div>
+          <p class = "text">
+            {{article.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id = "pag-center">
+      <div class="pagination">
+        <a [routerLink]= "['/tekstovi/kategorija/'+categoryId+'/stranica/'+number]"
+         *ngFor="let number of firstNums">{{number}}</a>
+         <a class = "activated" [routerLink]= "['/tekstovi/kategorija/'+categoryId+'/stranica/'+pageNumber]">{{pageNumber}}</a>
+         <a [routerLink]= "['/tekstovi/kategorija/'+categoryId+'/stranica/'+number]"
+         *ngFor="let number of secondNums">{{number}}</a>
+      </div>
+    </div>
+</body>
+</html>
