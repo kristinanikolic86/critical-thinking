@@ -37,8 +37,6 @@ dashboard, where articles can be added, edited, published and deleted.
 
 ![Error page](https://i.imgur.com/m51Ojun.png)
 
-![Mobile main page](https://i.imgur.com/ShLO5Qi.png)
-
 ![Responsive menu](https://i.imgur.com/A7v5vph.png)
 
 ![Responsive main page](https://i.imgur.com/3j7MSds.png)
